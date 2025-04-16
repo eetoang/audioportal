@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioBooks - Your Netflix for Book Summaries</title>
+    <link rel="stylesheet" href="main.css">
+
+    
+</head>
+<body>
+    <header id="header">
+        <div class="logo">AudioBooks</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My List</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">New & Popular</a></li>
+            </ul>
+        </nav>
+        <div class="profile">
+            <img src="/api/placeholder/100/100" alt="Profile">
+        </div>
+    </header>
+    
+    <div class="hero-banner">
+        <div class="hero-content">
+            <h1>Atomic Habits</h1>
+            <p>Tiny changes, remarkable results. Learn how small adjustments in your daily routines can lead to extraordinary results in this bestselling summary by James Clear.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="toggleAudioPlayer()">▶ Play</button>
+                <button class="btn btn-secondary" onclick="openBookDetails()">ⓘ More Info</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="category">
+            <h2>Popular Now</h2>
+            <div class="book-row">
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="the-psychology-of-money.jpeg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">The Psychology of Money</div>
+                        <div class="book-author">By Morgan Housel</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="deep-work.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Deep Work</div>
+                        <div class="book-author">By Cal Newport</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="thinking-fast-and-slow.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Thinking Fast and Slow</div>
+                        <div class="book-author">By Daniel Kahneman</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="the-four-agreements.jpeg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">The Four Agreements</div>
+                        <div class="book-author">By Don Miguel Ruiz</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="sapiens.jpeg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Sapiens</div>
+                        <div class="book-author">By Yuval Noah Harari</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="the-alchemist.webp" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">The Alchemist</div>
+                        <div class="book-author">By Paulo Coelho</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Business & Finance</h2>
+            <div class="book-row">
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="rich-dad-poor-dad.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Rich Dad Poor Dad</div>
+                        <div class="book-author">By Robert Kiyosaki</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="never-split-the-difference.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Never Split the Difference</div>
+                        <div class="book-author">By Chris Voss</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="the-intelligent-investor.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">The Intelligent Investor</div>
+                        <div class="book-author">By Benjamin Graham</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="Think-and-Grow-Rich.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Think and Grow Rich</div>
+                        <div class="book-author">By Napoleon Hill</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="principles.jpeg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Principles</div>
+                        <div class="book-author">By Ray Dalio</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="good-to-great.jpeg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Good to Great</div>
+                        <div class="book-author">By Jim Collins</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Self-Development</h2>
+            <div class="book-row">
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="the-power-of-now.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">The Power of Now</div>
+                        <div class="book-author">By Eckhart Tolle</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="mindset.jpeg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Mindset</div>
+                        <div class="book-author">By Carol Dweck</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="getting-things-done.webp" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Getting Things Done</div>
+                        <div class="book-author">By David Allen</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="man-s-search-for-meaning.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Man's Search for Meaning</div>
+                        <div class="book-author">By Viktor Frankl</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="the-7-habits-of.webp" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">The 7 Habits of Highly Effective People</div>
+                        <div class="book-author">By Stephen Covey</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-item" onclick="toggleAudioPlayer()">
+                    <img src="daring-greatly.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <div class="book-title">Daring Greatly</div>
+                        <div class="book-author">By Brené Brown</div>
+                        <div class="book-controls">
+                            <button>▶</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>AudioBooks</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                 <!--   <li><a href="#">Careers</a></li>-->
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Device Support</a></li>
+                    <li><a href="#">Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 AudioBooks. All Rights Reserved.
+        </div>
+    </footer>
+    
+    <div class="audio-player" id="audioPlayer">
+        <div class="now-playing">
+            <img src="AtomicHabits.jpg" alt="Now Playing" class="now-playing-thumb">
+            <div class="now-playing-info">
+                <h4>Atomic Habits</h4>
+                <p>By James Clear</p>
+            </div>
+        </div>
+        <div class="player-controls">
+            <button class="control-button">⏮</button>
+            <button class="control-button play-button">▶</button>
+            <button class="control-button">⏭</button>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="time-display">
+                <span>0:30</span>
+                <span>/</span>
+                <span>15:30</span>
+            </div>
+        </div>
+        <div class="volume-control">
+            <button class="control-button">🔊</button>
+            <div class="volume-slider">
+                <div class="volume-level"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add this just before the Book Details Modal -->
+<audio id="audioElement" preload="metadata"></audio>
+    
+    <!-- Book Details Modal -->
+    <div id="bookDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="book-details-container">
+                <div class="book-details-top">
+                    <div class="book-details-image">
+                        <img src="AtomicHabits.jpg" alt="Atomic Habits Cover">
+                    </div>
+                    <div class="book-details-info">
+                        <h2>Atomic Habits</h2>
+                        <div class="book-metadata">
+                            <span class="year">2018</span>
+                            <span class="duration">15m 24s</span>
+                            <span class="rating">4.8/5</span>
+                        </div>
+                        <p class="summary">Tiny changes, remarkable results. Learn how small adjustments in your daily routines can lead to extraordinary results in this bestselling summary by James Clear.</p>
+                        <div class="details-buttons">
+                            <button class="btn btn-primary" onclick="toggleAudioPlayer()">▶ Play</button>
+                            <button class="btn btn-secondary-outline">+ Add to My List</button>
+                        </div>
+                        <div class="book-tags">
+                            <span>Self-Development</span>
+                            <span>Productivity</span>
+                            <span>Personal Growth</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-details-bottom">
+                    <div class="book-details-tabs">
+                        <button class="tab-button active" data-tab="summary">Summary</button>
+                        <button class="tab-button" data-tab="chapters">Chapters</button>
+                        <button class="tab-button" data-tab="similar">Similar Books</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="summary" class="tab-pane active">
+                            <h3>About the Book</h3>
+                            <p>In Atomic Habits, James Clear presents a practical framework for improving every day. He reveals practical strategies that teach you how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.</p>
+                            <p>Drawing on proven ideas from biology, psychology, and neuroscience, Clear creates an easy-to-understand guide for making good habits inevitable and bad habits impossible. Along the way, he tells inspiring stories of Olympic gold medalists, leading CEOs, and distinguished scientists who have used the science of small habits to stay productive, motivated, and happy.</p>
+                            <h3>Key Takeaways</h3>
+                            <ul>
+                                <li><strong>Habits are the compound interest of self-improvement</strong> - Small changes often appear to make no difference until you cross a critical threshold.</li>
+                                <li><strong>Focus on your identity</strong> - The most effective way to change your habits is to focus on who you want to become, not what you want to achieve.</li>
+                                <li><strong>The Four Laws of Behavior Change</strong> - Make it obvious, make it attractive, make it easy, make it satisfying.</li>
+                                <li><strong>Environment is the invisible hand that shapes human behavior</strong> - Create an environment where doing the right thing is as easy as possible.</li>
+                            </ul>
+                            <h3>About the Author</h3>
+                            <p>James Clear is an author and speaker focused on habits, decision-making, and continuous improvement. His work has appeared in the New York Times, Time, and Entrepreneur, and on CBS This Morning, and is taught in colleges around the world. His website, jamesclear.com, receives millions of visitors each month, and hundreds of thousands subscribe to his popular email newsletter.</p>
+                        </div>
+                        <div id="chapters" class="tab-pane">
+                            <h3>Chapters</h3>
+                            <div class="chapter-list">
+                                <div class="chapter-item">
+                                    <div class="chapter-info">
+                                        <h4>1. The Surprising Power of Tiny Habits</h4>
+                                        <p>3:42</p>
+                                    </div>
+                                    <button class="chapter-play">▶</button>
+                                </div>
+                                <div class="chapter-item">
+                                    <div class="chapter-info">
+                                        <h4>2. How Habits Shape Your Identity</h4>
+                                        <p>4:10</p>
+                                    </div>
+                                    <button class="chapter-play">▶</button>
+                                </div>
+                                <div class="chapter-item">
+                                    <div class="chapter-info">
+                                        <h4>3. The Four Laws of Behavior Change</h4>
+                                        <p>3:55</p>
+                                    </div>
+                                    <button class="chapter-play">▶</button>
+                                </div>
+                                <div class="chapter-item">
+                                    <div class="chapter-info">
+                                        <h4>4. The Law of Least Effort</h4>
+                                        <p>2:48</p>
+                                    </div>
+                                    <button class="chapter-play">▶</button>
+                                </div>
+                                <div class="chapter-item">
+                                    <div class="chapter-info">
+                                        <h4>5. The Plateau of Latent Potential</h4>
+                                        <p>2:19</p>
+                                    </div>
+                                    <button class="chapter-play">▶</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="similar" class="tab-pane">
+                            <h3>You May Also Like</h3>
+                            <div class="similar-books">
+                                <div class="similar-book-item">
+                                    <img src="deep-work.jpg" alt="Deep Work">
+                                    <h4>Deep Work</h4>
+                                    <p>Cal Newport</p>
+                                </div>
+                                <div class="similar-book-item">
+                                    <img src="/api/placeholder/300/450?text=Power+of+Habit" alt="The Power of Habit">
+                                    <h4>The Power of Habit</h4>
+                                    <p>Charles Duhigg</p>
+                                </div>
+                                <div class="similar-book-item">
+                                    <img src="/api/placeholder/300/450?text=Mindset" alt="Mindset">
+                                    <h4>Mindset</h4>
+                                    <p>Carol Dweck</p>
+                                </div>
+                                <div class="similar-book-item">
+                                    <img src="/api/placeholder/300/450?text=Essentialism" alt="Essentialism">
+                                    <h4>Essentialism</h4>
+                                    <p>Greg McKeown</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        // Add this at the beginning of your script section
+// Audio Configuration - Change this to link your MP3 files
+const audioConfig = {
+    featuredBook: {
+        title: "Atomic Habits",
+        author: "James Clear",
+        coverImage: "/api/placeholder/500/750",
+        audioFile: "atomic-habits.mp3", // Replace with your actual MP3 file path
+        duration: 915, // in seconds (15:15)
+        chapters: [
+            { title: "The Surprising Power of Tiny Habits", start: 0, duration: 222 }, // 3:42
+            { title: "How Habits Shape Your Identity", start: 222, duration: 250 }, // 4:10
+            { title: "The Four Laws of Behavior Change", start: 472, duration: 235 }, // 3:55
+            { title: "The Law of Least Effort", start: 707, duration: 168 }, // 2:48
+            { title: "The Plateau of Latent Potential", start: 875, duration: 139 }  // 2:19
+        ]
+    },
+    otherBooks: [
+        {
+            title: "The Psychology of Money",
+            author: "Morgan Housel",
+            audioFile: "atomic-habits.mp3"
+        },
+        {
+            title: "Deep Work",
+            author: "Cal Newport",
+            audioFile: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+        }
+        // Add more books as needed
+    ]
+};
+        
+        // Header scrolling effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Toggle Audio Player
+        function toggleAudioPlayer() {
+    const audioPlayer = document.getElementById('audioPlayer');
+    
+    if (!audioPlayer.classList.contains('active')) {
+        // If player is hidden, show it and start playing featured book
+        audioPlayer.classList.add('active');
+        playBook(audioConfig.featuredBook);
+    } else {
+        // If already visible, just toggle play/pause
+        togglePlay();
+    }
+}
+        
+        // Play/Pause button functionality
+        const playButton = document.querySelector('.play-button');
+        playButton.addEventListener('click', function() {
+            if (this.textContent === '▶') {
+                this.textContent = '⏸';
+            } else {
+                this.textContent = '▶';
+            }
+        });
+        
+        // Add these functions to control audio playback
+// Audio Player Elements
+const audioElement = document.getElementById('audioElement');
+const playButton = document.querySelector('.play-button');
+const nowPlayingTitle = document.querySelector('.now-playing-info h4');
+const nowPlayingAuthor = document.querySelector('.now-playing-info p');
+
+// Play current book with chapter offset
+function playBook(book, chapterIndex = 0) {
+    // Update audio source if it's a different book
+    if (audioElement.src !== book.audioFile) {
+        audioElement.src = book.audioFile;
+    }
+    
+    // Set chapter start time if provided
+    if (chapterIndex >= 0 && book.chapters && book.chapters[chapterIndex]) {
+        audioElement.currentTime = book.chapters[chapterIndex].start;
+    }
+    
+    // Update player display
+    nowPlayingTitle.textContent = book.title;
+    nowPlayingAuthor.textContent = `By ${book.author}`;
+    
+    // Play audio and update UI
+    audioElement.play()
+        .then(() => {
+            playButton.textContent = '⏸';
+        })
+        .catch(error => {
+            console.error('Audio playback error:', error);
+            alert('Could not play audio file. Please check the file path and try again.');
+        });
+}
+
+// Toggle play/pause
+function togglePlay() {
+    if (audioElement.paused) {
+        audioElement.play()
+            .then(() => {
+                playButton.textContent = '⏸';
+            })
+            .catch(error => {
+                console.error('Audio playback error:', error);
+            });
+    } else {
+        audioElement.pause();
+        playButton.textContent = '▶';
+    }
+}
+        
+        // Book Details Modal
+        const modal = document.getElementById('bookDetailsModal');
+        const closeModal = document.querySelector('.close-modal');
+        
+        function openBookDetails() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        }
+        
+        closeModal.onclick = function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        }
+        
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+                
+                // Add active class to current tab
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Chapter play buttons
+        // Set up chapter play buttons
+const chapterPlayButtons = document.querySelectorAll('.chapter-play');
+chapterPlayButtons.forEach((button, index) => {
+    button.addEventListener('click', function() {
+        playBook(audioConfig.featuredBook, index);
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+});
+        
+        // Book click handlers
+document.querySelectorAll('.book-item').forEach((bookItem, index) => {
+    bookItem.addEventListener('click', function(e) {
+        // Prevent clicks on controls from triggering this
+        if (e.target.tagName === 'BUTTON') return;
+        
+        // Play the corresponding book or default to the first "other book" if not found
+        const book = index < audioConfig.otherBooks.length ? 
+            audioConfig.otherBooks[index] : audioConfig.otherBooks[0];
+        
+        playBook(book);
+    });
+});
+        
+        // When audio ends
+audioElement.addEventListener('ended', function() {
+    playButton.textContent = '▶';
+    audioElement.currentTime = 0;
+});
+    </script>
+</body>
+</html>

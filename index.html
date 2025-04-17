@@ -5,13 +5,14 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
         <title>AudioBooks - Your Netflix for Book Summaries</title>
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="style.css">
+        
 </head>
     
 <body style="overflow: auto;">
     <header class="scrolled" id="header">
-        <div class="logo">AudioBooks</div>
-            <nav>
+        <div class="menu-toggle" id="menu-toggle"> ☰ </div>
+        <a href="audiobook-mylist-enabled.html" class="logo">AudioBooks</a>            <nav>
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="my-list.html">My List</a>
@@ -530,78 +531,23 @@
                 document.body.style.overflow = 'auto';
             });
         });
-    </script>
-<!--<script>
-let myList = JSON.parse(localStorage.getItem('myList')) || [];
-const bookItems = document.querySelectorAll('.book-item');
+    
+    //responsive header
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector("#menu-toggle");
+    const navMenu = document.querySelector("header nav ul");
 
-bookItems.forEach(item => {
-    const bookId = item.getAttribute('data-book-id');
-    const addButton = item.querySelector('.book-controls button:nth-child(2)');
-
-    if (myList.includes(bookId)) {
-        addButton.textContent = '✓';
-    }
-
-    addButton.addEventListener('click', (e) => {
-    e.stopPropagation();
-
-    const book = {
-        id: bookId,
-        title: item.querySelector('.book-title')?.textContent || '',
-        author: item.querySelector('.book-author')?.textContent || '',
-        description: item.querySelector('.book-description')?.textContent || '',
-        image: item.querySelector('img')?.getAttribute('src') || ''
-    };
-
-    if (myList.some(b => b.id === bookId)) {
-        myList = myList.filter(b => b.id !== bookId);
-        addButton.textContent = '+';
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", () => {
+        console.log("☰ clicked");
+        navMenu.classList.toggle("active");
+      });
     } else {
-        myList.push(book);
-        addButton.textContent = '✓';
+      console.warn("menuToggle or navMenu not found");
     }
-
-    localStorage.setItem('myList', JSON.stringify(myList));
-    renderMyList();
-    });
-        
-});
-
-function renderMyList() {
-    const myListContainer = document.querySelector('#my-list-books');
-    if (!myListContainer) return;
-
-    myListContainer.innerHTML = '';
-
-    myList.forEach(book => {
-        const card = document.createElement('div');
-        card.className = 'book-card';
-
-        card.innerHTML = `
-            <img src="${book.image}" alt="${book.title}">
-            <h3 class="book-title">${book.title}</h3>
-            <p class="book-author">${book.author}</p>
-            <p class="book-description">${book.description}</p>
-            <div class="book-controls">
-                <button class="remove">✓</button>
-            </div>
-        `;
-
-        card.querySelector('.remove').addEventListener('click', () => {
-            myList = myList.filter(b => b.id !== book.id);
-            localStorage.setItem('myList', JSON.stringify(myList));
-            renderMyList();
-        });
-
-        myListContainer.appendChild(card);
-    });
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    renderMyList();
-});
-</script>-->
+  });
+    
+    </script>
 
 <script>
 const myList = JSON.parse(localStorage.getItem('myList')) || [];

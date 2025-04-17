@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My List</title>
-     <link rel="stylesheet" href="main.css">
+     <link rel="stylesheet" href="style.css">
     
     <style>
   .book-card {
@@ -39,8 +39,9 @@
 </head>
 <body>
   <header class="scrolled" id="header">
-    <div class="logo">AudioBooks</div>
-    <nav>
+      <div class="menu-toggle" id="menu-toggle"> ☰ </div>
+      <a href="audiobook-mylist-enabled.html" class="logo">AudioBooks</a>     
+      <nav>
         <ul>
             <li><a href="audiobook-mylist-enabled.html">Home</a></li>
             <li><a href="">My List</a>
@@ -54,7 +55,7 @@
 </header>
 
   <div class="content">
-    <h2>My List</h2>
+   <!-- <h2>My List</h2> -->
     <div class="book-grid" id="my-list-books"></div>
   </div>
 
@@ -104,6 +105,21 @@ function removeFromList(id) {
 }
 
 window.addEventListener('DOMContentLoaded', renderMyList);
-    </script>
+   
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector("#menu-toggle");
+    const navMenu = document.querySelector("header nav ul");
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", () => {
+        console.log("☰ clicked");
+        navMenu.classList.toggle("active");
+      });
+    } else {
+      console.warn("menuToggle or navMenu not found");
+    }
+  });
+ </script>
+   
 </body>
 </html>

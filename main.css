@@ -868,3 +868,88 @@
       background-color: #f40612;
     }
   
+/*response header*/
+/* 默认样式：隐藏 toggle 按钮 */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* 小屏幕下的响应式菜单 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    padding: 20px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #222;
+  }
+}
+
+header nav ul {
+    display: flex !important;
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+
+  header nav ul li {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #222;
+  }
+
+  @media (min-width: 768px) {
+    header nav ul {
+      flex-direction: row;
+      position: static;
+      background-color: transparent;
+    }
+
+    header nav ul li {
+      border: none;
+      padding: 0 15px;
+    }
+  }
+            
+    @media (max-width: 767px) {
+  header nav ul {
+    display: none !important;
+  }
+
+  header nav ul.active {
+    display: flex !important;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+  }
+}        

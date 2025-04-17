@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My List</title>
+     <link rel="stylesheet" href="style.css">
+    
+    <style>
+  .book-card {
+    background: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    margin: 10px;
+  }
+  .book-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  .book-info {
+    padding: 10px;
+  }
+  .book-controls {
+    padding: 10px;
+  }
+  .remove-btn {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
+
+</head>
+<body>
+  <header class="scrolled" id="header">
+    <div class="logo">AudioBooks</div>
+    <nav>
+        <ul>
+            <li><a href="audiobook-mylist-enabled.html">Home</a></li>
+            <li><a href="">My List</a>
+            <!--</li><li><a href="">Categories</a></li>-->
+            <li><a href="">Subscribe</a></li>
+        </ul>
+    </nav>
+<div class="profile">
+<img alt="Profile" src="icons/icons8-user-100.png"/>
+</div>
+</header>
+
+  <div class="content">
+    <h2>My List</h2>
+    <div class="book-grid" id="my-list-books"></div>
+  </div>
+
+<script>
+  let myList = JSON.parse(localStorage.getItem('myList')) || [];
+
+function renderMyList() {
+  const container = document.getElementById('my-list-books');
+  container.innerHTML = '';
+
+  const list = JSON.parse(localStorage.getItem('myList')) || [];
+
+  list.forEach(book => {
+    if (!book || !book.id) return;
+
+    const card = document.createElement('div');
+    card.className = 'book-card';
+    card.innerHTML = `
+      <img src="${book.image}" alt="${book.title}" />
+      <div class="book-info">
+        <div class="book-title">${book.title}</div>
+        <div class="book-author">By ${book.author}</div>
+        <div class="book-description">${book.description || ''}</div>
+      </div>
+      <div class="book-controls">
+        <button class="remove-btn" data-id="${book.id}">🗑️</button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+
+  // ✅ 正确调用 removeFromList()
+  document.querySelectorAll('.remove-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const id = e.target.getAttribute('data-id');
+      removeFromList(id);
+    });
+  });
+}
+
+function removeFromList(id) {
+  let currentList = JSON.parse(localStorage.getItem('myList')) || [];
+  currentList = currentList.filter(book => String(book.id) !== String(id));
+  localStorage.setItem('myList', JSON.stringify(currentList));
+  myList = currentList;
+  renderMyList();
+}
+
+window.addEventListener('DOMContentLoaded', renderMyList);
+    </script>
+</body>
+</html>

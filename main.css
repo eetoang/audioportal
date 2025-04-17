@@ -1,4 +1,4 @@
-<style>
+
         /* General Styles */
         * {
             margin: 0;
@@ -362,7 +362,7 @@
             position: relative;
             height: 80vh;
             width: 100%;
-            background: linear-gradient(to bottom, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 0.7) 50%, rgba(20, 20, 20, 1) 100%), url('Atomic-Habits-Banners.png') center/cover no-repeat;
+            background: linear-gradient(to bottom, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 0.7) 50%, rgba(20, 20, 20, 1) 100%), url('images/Atomic-Habits-Banners.png') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -423,10 +423,12 @@
         /* Main Content Styles */
         .content {
             padding: 20px 40px;
+            padding-left: 50px;
         }
         
         .category {
             margin-bottom: 40px;
+            margin-left: 40px;
         }
         
         .category h2 {
@@ -736,4 +738,133 @@
                 display: none;
             }
         }
-    </style>
+
+
+/* my-list*/
+.my-list-container {
+      padding:  200px 20px;
+    }
+
+    .my-list-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .book-grid {
+        padding-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .book-card {
+      background-color: #222;
+      width: 200px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .book-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .book-card .info {
+      padding: 10px;
+    }
+
+    .book-card .info h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .book-card .info p {
+      margin: 4px 0 0 0;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #141414;
+    }
+    header h1 {
+      margin: 0;
+      color: #e50914;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    nav a:hover {
+      color: #e50914;
+    }
+    .content {
+      padding: 40px 20px;
+    }
+    .book-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .book-card {
+      background-color: #222;
+      width: 200px;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .book-card:hover {
+      transform: scale(1.05);
+    }
+    .book-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .book-info {
+      padding: 10px;
+    }
+    .book-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 0 5px 0;
+    }
+    .book-author {
+      font-size: 14px;
+      color: #aaa;
+      margin: 0 0 5px 0;
+    }
+    .book-description {
+      font-size: 13px;
+      color: #bbb;
+    }
+    .book-controls {
+      padding: 0 10px 10px;
+    }
+    .book-controls button {
+      background-color: #e50914;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .book-controls button:hover {
+      background-color: #f40612;
+    }
+  
